@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena dos Heróis</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --panel-bg: #1e293b;
+      --accent-color: #38bdf8;
+      --text-color: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .selector {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .char-btn {
+      background: var(--panel-bg);
+      border: 2px solid #334155;
+      color: var(--text-color);
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .char-btn:hover {
+      border-color: var(--accent-color);
+    }
+
+    .char-btn.active {
+      background: var(--accent-color);
+      color: #000;
+      border-color: var(--accent-color);
+    }
+
+    #gameCanvas {
+      background-color: #020617;
+      border: 3px solid #334155;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .hud {
+      margin-top: 1rem;
+      display: flex;
+      gap: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .instructions {
+      margin-top: 1rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Arena dos Heróis</h1>
+
+  <div class="selector">
+    <button class="char-btn active" onclick="selectChar(0)">Velox (Velocista)</button>
+    <button class="char-btn" onclick="selectChar(1)">Ignis (Mago)</button>
+    <button class="char-btn" onclick="selectChar(2)">Titan (Tanque)</button>
+  </div>
+
+  <canvas id="gameCanvas" width="600" height="400"></canvas>
+
+  <div class="hud">
+    <div>Pontos: <span id
